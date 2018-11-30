@@ -40,7 +40,14 @@ $resultado = mysql_query($sql);
       </div>
 
       <div class="col-md-8">
-        <?php
+
+        <?php 
+
+        if ( (isset($_GET['mensagem'])) && ($_GET['mensagem'] == "sucesso") ) {
+          echo '<div class="alert alert-success" role="alert">Ação realizada com Sucesso!</div>';
+        } else if ( (isset($_GET['mensagem'])) && ($_GET['mensagem'] == "falha") ) {
+          echo '<div class="alert alert-danger" role="alert">A ação não pode ser realizada. Tente Novamente!</div>';
+        }
 
         while ($noticia = mysql_fetch_array($resultado)) {
           
@@ -51,7 +58,7 @@ $resultado = mysql_query($sql);
               </a>
             </div>
             <div class="media-body">
-              <h4 class="media-heading">'.$noticia['titulo'].'</h4>
+              <h4 class="media-heading"><a href="ler_noticia.php?id='.$noticia['id'].'">'.$noticia['titulo'].'</a></h4>
               Notícia publicada em '.date("d/m/y H:i", strtotime($noticia['data_cadastro'])).'
             </div>
 

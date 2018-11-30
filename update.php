@@ -16,8 +16,8 @@ $sql = 'UPDATE noticias SET categoria = '.$categoria.', titulo = "'.$titulo.'", 
 
 $resultado = mysql_query($sql) or die(mysql_error());
 
-if ($resultado){
-	header("Location: index.php");
+if ($resultado) {
+	header("Location: index.php?mensagem=sucesso");
 } else {
-	echo "Erro ao atualizar o registro";
+	header("Location: index.php?mensagem=falha");
 }

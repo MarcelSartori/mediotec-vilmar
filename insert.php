@@ -14,7 +14,7 @@ $sql = 'INSERT INTO noticias (categoria, titulo, texto, fonte, usuario, data_cad
 $resultado = mysql_query($sql) or die(mysql_error());
 
 if ($resultado) {
-	header("Location: index.php");
+	header("Location: index.php?mensagem=sucesso");
 } else {
-	echo "A notícia não pode ser inserida";
+	header("Location: index.php?mensagem=falha");
 }

@@ -9,7 +9,7 @@ $sql = 'DELETE FROM noticias WHERE id = '.$id;
 $resultado = mysql_query($sql) or die(mysql_error());
 
 if ($resultado) {
-	echo "O registro foi excluído com sucesso";
+	header("Location: index.php?mensagem=sucesso");
 } else {
-	echo "Não foi possível excluir o registro";
+	header("Location: index.php?mensagem=falha");
 }
