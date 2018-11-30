@@ -54,6 +54,10 @@ $resultado = mysql_query($sql);
               <h4 class="media-heading">'.$noticia['titulo'].'</h4>
               Notícia publicada em '.date("d/m/y H:i", strtotime($noticia['data_cadastro'])).'
             </div>
+
+            <a class="btn btn-success" href="editar.php?id='.$noticia['id'].'" role="button">Editar</a>
+            <a class="btn btn-danger" href="delete.php?id='.$noticia['id'].'" role="button">Excluir</a>
+          
           </div>';
 
         }
