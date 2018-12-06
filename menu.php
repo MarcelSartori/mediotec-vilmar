@@ -17,6 +17,7 @@
         <li><a href="index.php">Página Inicial</a></li>
         <li><a href="noticias.php">Notícias</a></li>
         <li><a href="contato.php">Contato</a></li>
+        <li><a href="cadastro.php">Cadastrar Notícia</a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
