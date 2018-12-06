@@ -20,6 +20,7 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="cadastro.php">Cadastrar Notícia</a></li>
         <form class="navbar-form navbar-left">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Digite sua busca">
