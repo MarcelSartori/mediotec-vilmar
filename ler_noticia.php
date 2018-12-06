@@ -42,6 +42,9 @@ $noticia = mysql_fetch_array($resultado);
           echo '<h1>'.$noticia['titulo'].'</h1>';
 
           echo '<h4>Notícia cadastrada em '.date("d/m/Y H:i", strtotime($noticia['data_cadastro'])).'</h4>';
+
+          echo '<img src="fotos/'.$noticia['foto'].'" class="img-responsive img-rounded">';
+
           
           echo '<p>'.$noticia['texto'].'</p>';
           

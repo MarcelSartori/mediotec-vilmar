@@ -54,7 +54,7 @@ $resultado = mysql_query($sql);
           echo '<div class="media">
             <div class="media-left media-middle">
               <a href="#">
-                <img class="media-object" src="..." alt="...">
+                <img class="media-object img-thumbnail" src="fotos/'.$noticia['foto'].'" width="100" alt="...">
               </a>
             </div>
             <div class="media-body">
@@ -62,8 +62,8 @@ $resultado = mysql_query($sql);
               Notícia publicada em '.date("d/m/y H:i", strtotime($noticia['data_cadastro'])).'
             </div>
 
-            <a class="btn btn-success" href="editar.php?id='.$noticia['id'].'" role="button">Editar</a>
-            <a class="btn btn-danger" href="delete.php?id='.$noticia['id'].'" role="button">Excluir</a>
+            <a class="btn btn-xs btn-success" href="editar.php?id='.$noticia['id'].'" role="button">Editar</a>
+            <a class="btn btn-xs btn-danger" href="delete.php?id='.$noticia['id'].'" role="button">Excluir</a>
           
           </div>';
 
