@@ -41,7 +41,7 @@ $resultado = mysql_query($sql);
 
       <div class="col-md-12">
 
-        <form action="insert.php" method="post">
+        <form action="insert.php" method="post" enctype="multipart/form-data">
 
           <div class="form-group">
             <label for="categoria">Selecione uma Categoria</label>
@@ -73,6 +73,11 @@ $resultado = mysql_query($sql);
           <div class="form-group">
             <label for="fonte">Fonte da Notícia</label>
             <input type="text" class="form-control" id="fonte" name="fonte" placeholder="Digite aqui a Fonte">
+          </div>
+
+          <div class="form-group">
+            <label for="fonte">Foto da Notícia</label>
+            <input type="file" class="form-control" id="foto" name="foto">
           </div>
 
           <button type="submit" class="btn btn-primary">Cadastrar Notícia</button>
