@@ -32,6 +32,7 @@ $resultado = mysql_query($sql);
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="ckeditor/ckeditor.js"></script>
   </head>
   <body>
     
@@ -45,7 +46,7 @@ $resultado = mysql_query($sql);
 
       <div class="col-md-12">
 
-        <form action="update.php" method="post">
+        <form action="update.php" method="post" enctype="multipart/form-data">
 
           <div class="form-group">
             <label for="categoria">Selecione uma Categoria</label>
@@ -76,12 +77,33 @@ $resultado = mysql_query($sql);
           <div class="form-group">
             <label for="texto">Texto da Notícia</label>
             <textarea type="text" class="form-control" rows="10" id="texto" name="texto" placeholder="Digite aqui o Texto da Notícia"><?php echo $noticia['texto']; ?></textarea>
+            <script>
+                CKEDITOR.replace('texto');
+            </script>
           </div>
 
           <div class="form-group">
             <label for="fonte">Fonte da Notícia</label>
             <input type="text" class="form-control" id="fonte" name="fonte" placeholder="Digite aqui a Fonte" value="<?php echo $noticia['fonte']; ?>">
           </div>
+
+          <div class="row">
+
+            <div class="col-md-4">
+              <img src="fotos/<?php echo $noticia['foto']; ?>" class="img-responsive img-rounded">
+            </div>
+
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="foto">Se você deseja alterar a foto, selecione um novo arquivo</label>
+                <input type="file" class="form-control" id="foto" name="foto">
+              </div>
+            </div>
+
+          </div>
+
+
+
           <input type="hidden" name="id" value="<?php echo $id; ?>">
           <button type="submit" class="btn btn-primary">Atualizar Notícia</button>
 
