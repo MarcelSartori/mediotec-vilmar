@@ -28,6 +28,7 @@ $resultado = mysql_query($sql);
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="ckeditor/ckeditor.js"></script>
   </head>
   <body>
     
@@ -68,6 +69,9 @@ $resultado = mysql_query($sql);
           <div class="form-group">
             <label for="texto">Texto da Notícia</label>
             <textarea type="text" class="form-control" rows="10" id="texto" name="texto" placeholder="Digite aqui o Texto da Notícia"></textarea>
+            <script>
+                CKEDITOR.replace('texto');
+            </script>
           </div>
 
           <div class="form-group">
