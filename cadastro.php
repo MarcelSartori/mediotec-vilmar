@@ -63,7 +63,7 @@ $resultado = mysql_query($sql);
 
           <div class="form-group">
             <label for="titulo">Título da Notícia</label>
-            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite aqui o Título">
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite aqui o Título" required>
           </div>
 
           <div class="form-group">
