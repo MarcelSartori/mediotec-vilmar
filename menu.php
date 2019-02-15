@@ -26,7 +26,7 @@ $resultado_menu = mysql_query($sqlmenu);
           <ul class="dropdown-menu">
             <?php
             while ($categoria = mysql_fetch_array($resultado_menu)) {
-              echo '<li><a href="link">'.$categoria['nome'].'</a></li>';
+              echo '<li><a href="categoria.php?id='.$categoria['id'].'">'.$categoria['nome'].'</a></li>';
             }
             ?>
           </ul>
@@ -36,9 +36,9 @@ $resultado_menu = mysql_query($sqlmenu);
       
       <ul class="nav navbar-nav navbar-right">
         <li><a href="cadastro.php">Cadastrar Notícia</a></li>
-        <form class="navbar-form navbar-left">
+        <form action="pesquisa.php" method="get" class="navbar-form navbar-left">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Digite sua busca">
+            <input name="termo" type="text" class="form-control" placeholder="Digite sua busca">
           </div>
           <button type="submit" class="btn btn-default">Pesquisar</button>
         </form>
