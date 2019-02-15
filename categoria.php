@@ -4,10 +4,16 @@
 include("conexao.php");
 
 // Crio minha consultao ao banco
-$sql = "SELECT * FROM noticias ORDER BY data_cadastro DESC";
+$categoria = $_GET['id'];
+$sql = "SELECT * FROM noticias WHERE categoria = ".$categoria." ORDER BY data_cadastro DESC";
 
 // Armazeno o resultado do comando na variável $resultado
 $resultado = mysql_query($sql);
+
+// Dados da Categoria
+$sql_categoria = "SELECT * FROM categorias WHERE id = ".$categoria;
+$resultado_categoria = mysql_query($sql_categoria);
+$dados = mysql_fetch_array($resultado_categoria);
 
 ?>
 <!DOCTYPE html>
@@ -36,6 +42,16 @@ $resultado = mysql_query($sql);
       <div class="col-md-12">
 
         <?php include("menu.php") ?>
+
+      </div>
+
+      <div class="col-md-12">
+
+        <ol class="breadcrumb">
+          <li><a href="index.php">Home</a></li>
+          <li><a href="noticias.php">Notícias</a></li>
+          <li class="active"><?php echo $dados['nome']; ?></li>
+        </ol>
 
       </div>
 
