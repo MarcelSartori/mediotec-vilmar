@@ -29,6 +29,13 @@
 
           <h1>Formulário de Login</h1>
           <h3>Digite seus dados e clique em Entrar</h3>
+          
+          <?php
+          if ( (isset($_GET['mensagem'])) && ($_GET['mensagem'] == "erro") ) {
+            echo '<div class="alert alert-danger" role="alert">Login ou Senha errados! Tente Novamente</div>';
+          }
+
+          ?>
 
           <div class="form-group">
               <input name="login" type="text" class="form-control input-lg" placeholder="Digite seu Login">
