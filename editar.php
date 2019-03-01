@@ -1,4 +1,9 @@
 <?php
+// Iniciando a Sessão
+session_start();
+
+// Incluindo a proteção no arquivo
+include("seguro.php");
 
 // Incluindo a Conexão com o BD
 include("conexao.php");

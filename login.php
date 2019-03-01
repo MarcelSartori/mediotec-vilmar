@@ -35,6 +35,10 @@
             echo '<div class="alert alert-danger" role="alert">Login ou Senha errados! Tente Novamente</div>';
           }
 
+          if ( (isset($_GET['mensagem'])) && ($_GET['mensagem'] == "erro-administrador") ) {
+            echo '<div class="alert alert-danger" role="alert">Você não tem permissão para acessar esta página! Tente novamente.</div>';
+          }
+
           ?>
 
           <div class="form-group">

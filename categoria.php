@@ -1,4 +1,6 @@
 <?php
+// Iniciando a Sessão
+session_start();
 
 // Incluindo a Conexão com o BD
 include("conexao.php");
@@ -76,12 +78,14 @@ $dados = mysql_fetch_array($resultado_categoria);
             <div class="media-body">
               <h4 class="media-heading"><a href="ler_noticia.php?id='.$noticia['id'].'">'.$noticia['titulo'].'</a></h4>
               Notícia publicada em '.date("d/m/y H:i", strtotime($noticia['data_cadastro'])).'
-            </div>
+            </div>';
 
-            <a class="btn btn-xs btn-success" href="editar.php?id='.$noticia['id'].'" role="button">Editar</a>
-            <a class="btn btn-xs btn-danger" href="delete.php?id='.$noticia['id'].'" role="button">Excluir</a>
-          
-          </div>';
+            // Verifica se o usuário está logado e oferece as opções de edição
+            if (isset($_SESSION['cod_usuario']) && $_SESSION['nivel'] == 'administrador') {
+              echo '<a class="btn btn-xs btn-success" href="editar.php?id='.$noticia['id'].'" role="button">Editar</a>
+                <a class="btn btn-xs btn-danger" href="delete.php?id='.$noticia['id'].'" role="button">Excluir</a>';
+            }
+          echo '</div>';
 
         }
 

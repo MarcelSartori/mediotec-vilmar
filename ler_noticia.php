@@ -1,4 +1,6 @@
 <?php
+// Iniciando a Sessão
+session_start();
 
 // Incluindo a Conexão com o BD
 include("conexao.php");

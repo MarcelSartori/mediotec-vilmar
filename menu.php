@@ -35,7 +35,13 @@ $resultado_menu = mysql_query($sqlmenu);
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="cadastro.php">Cadastrar Notícia</a></li>
+        <?php
+          if (isset($_SESSION['cod_usuario'])) {
+            echo '<li><a href="cadastro.php">Cadastrar Notícia</a></li>';
+          } else {
+            echo '<li><a href="login.php">Login</a></li>';
+          }
+        ?>
         <form action="pesquisa.php" method="get" class="navbar-form navbar-left">
           <div class="form-group">
             <input name="termo" type="text" class="form-control" placeholder="Digite sua busca">
@@ -46,3 +52,13 @@ $resultado_menu = mysql_query($sqlmenu);
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<?php
+if (isset($_SESSION['cod_usuario'])) {
+  echo '<ol class="breadcrumb">
+    <li>Olá <b>'.$_SESSION['nome'].'</b> seja bem vindo ao Sistema.</li>
+    <li><a href="logoff.php">Fazer Logoff</a></li>
+  </ol>';
+}
+
+?>

@@ -1,5 +1,11 @@
 <?php
+// Iniciando a Sessão
+session_start();
 
+// Incluindo a proteção no arquivo
+include("seguro.php");
+
+// Conexão com o Banco
 include("conexao.php");
 
 $id = $_GET['id'];
