@@ -27,7 +27,7 @@ if ($total == 1){
 	$_SESSION['nivel'] = $usuario['nivel'];
 
 	// Redirecionar o Usuário
-	header("Location: seguro.php");
+	header("Location: index.php");
 } else {
 
 	session_destroy();
