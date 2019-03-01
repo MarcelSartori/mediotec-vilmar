@@ -1,8 +1,16 @@
 <?php
 // Iniciando Sessão
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE ){ 
+	session_start();
+}
 
-echo '<pre>';
-echo session_id();
-print_r($_SESSION);
-echo '</pre>';
+
+if (isset($_SESSION['cod_usuario'])){
+
+	if ($_SESSION['nivel'] != "administrador"){
+		header("Location: login.php?mensagem=erro-administrador");
+	}
+
+} else{
+	header("Location: login.php");
+}
