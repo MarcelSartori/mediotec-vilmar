@@ -1,4 +1,6 @@
 <?php
+// Iniciando a Sessão
+session_start();
 
 include("conexao.php");
 
@@ -8,7 +10,7 @@ $titulo = $_POST['titulo'];
 $texto = $_POST['texto'];
 $fonte = $_POST['fonte'];
 $foto = $_FILES['foto'];
-$usuario = 1;
+$usuario = $_SESSION['cod_usuario'];
 
 echo '<pre>';
 print_r($foto);
